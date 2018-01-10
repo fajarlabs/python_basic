@@ -1,13 +1,16 @@
 import sys 
 print ("python version ",sys.version)
 
+''' membuat kelas pertama '''
 class Bapak :
+	''' ini adalah constructor kelas '''
 	def __init__(self, nama) : # setiap methode harus ada parameter "self" sebagai bagian dari class tersebut
 		self.__nama = nama
 
 	def getNama(self) :
 		return self.__nama
 
+''' membuat kelas kedua '''
 class Ibu :
 	def __init__(self, nama) : # setiap methode harus ada parameter "self" sebagai bagian dari class tersebut
 		self.__nama = nama
@@ -15,17 +18,20 @@ class Ibu :
 	def getNama(self) :
 		return self.__nama		
 
+''' instansiasi '''
 obj = Bapak("Bapak") 	
 print(obj.getNama())
 
+''' cara menggunakan kelas turunan '''
 class Anak(Bapak,Ibu) :
+	''' constructor '''
 	def __init__(self):
 		Ibu.__init__(self,"HELLO IBU")
 		Bapak.__init__(self,"HELLO BAPAK")
-		pass
+		pass # tidak terjadi apa-apa
 
 obj = Anak()
-# yang terpanggil hello bapak, atau argument turunan class paling kiri
+''' yang terpanggil hello bapak, atau argument turunan class paling kiri '''
 print obj.getNama()
 
 
